@@ -1,0 +1,359 @@
+/* =========================================
+   VARIABLES DE COLOR Y ESTILOS GLOBALES
+========================================= */
+:root {
+    --bg-dark-color: #2A2A2A;      /* Fondo oscuro del header y servicios */
+    --brand-magenta: #FF00FF;      /* Color magenta del logo y nombre */
+    --btn-dark: #333333;           /* Color del botón */
+    --text-light-gray: #D1D1D1;    /* Gris claro para textos sobre fondo oscuro */
+    --bg-light-gray: #F8F9FA;      /* Fondo de las tarjetas de proyectos */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFFFFF;
+}
+
+/* =========================================
+   NAVBAR (Encabezado)
+========================================= */
+.custom-navbar {
+    background-color: var(--bg-dark-color);
+}
+
+.custom-toggler {
+    border: none; /* Quitamos el borde por defecto de Bootstrap */
+}
+
+.custom-toggler:focus {
+    box-shadow: none; /* Quitamos el anillo azul de focus */
+}
+
+/* Personalizamos el ícono hamburguesa para que sea magenta */
+.custom-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FF00FF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =========================================
+   HERO SECTION (Inicio)
+========================================= */
+.profile-img {
+    width: 100%;             /* Ocupa el ancho disponible de su columna */
+    max-width: 380px;        /* Pero nunca crecerá más de este tamaño en PC */
+    aspect-ratio: 1 / 1;     /* Magia: obliga a que el alto sea igual al ancho siempre (cuadrado perfecto) */
+    object-fit: cover;       /* Evita que la foto se deforme o se estire */
+    border: 5px solid #fff;  /* Opcional: un pequeño borde blanco para resaltar la sombra */
+}
+
+.brand-accent {
+    color: var(--brand-magenta);
+    letter-spacing: -0.5px;
+}
+
+.btn-custom-dark {
+    background-color: var(--btn-dark);
+    color: #FFFFFF;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom-dark:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   SERVICES SECTION (Servicios)
+========================================= */
+.services-section {
+    background-color: var(--bg-dark-color);
+}
+
+/* Esta clase crea la línea magenta a la izquierda de cada servicio */
+.service-item {
+    border-left: 3px solid var(--brand-magenta);
+    padding-left: 1.25rem;
+    margin-left: 0.5rem; /* Pequeño margen para separar del borde de la pantalla */
+}
+
+.service-icon {
+    width: 45px;
+    height: auto;
+    /* Si tus iconos originales son negros, este filtro los volverá blancos automáticamente */
+    filter: brightness(0) invert(1); 
+}
+
+.service-item .text-light {
+    color: var(--text-light-gray) !important;
+    line-height: 1.5;
+}
+
+/* =========================================
+   PROJECTS SECTION (Proyectos)
+========================================= */
+.custom-card {
+    background-color: var(--bg-light-gray);
+    border-radius: 12px;
+    overflow: hidden; /* Asegura que la imagen respete el borde redondeado de la tarjeta */
+}
+
+.custom-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.custom-card .card-body {
+    background-color: var(--bg-light-gray);
+}
+
+/* =========================================
+   ESTILOS COMPLETOS: SKILLS ACADEMY
+========================================= */
+
+/* Títulos de sección en Magenta */
+#detalle-proyecto .img-fluid {
+    /* Mantiene la fluidez original de Bootstrap */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    
+    /* LIMITADOR: Evita que la imagen crezca de forma desmedida en PC */
+    /* Dado que tu imagen es alta (1080px), 800px de ancho es el punto dulce */
+    max-width: 800px; 
+
+    /* Suavizado de bordes y sombras para el mockup */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto sutil al pasar el mouse (opcional, para diseño más pro) */
+#detalle-proyecto .img-fluid:hover {
+    transform: scale(1.01);
+}
+
+/* Ajuste específico para pantallas muy grandes (UltraWide) */
+@media (min-width: 1400px) {
+    #detalle-proyecto .img-fluid {
+        max-width: 850px; /* Un poco más de presencia en pantallas grandes */
+    }
+}
+
+/* Ajuste para móviles: eliminamos el límite para que use el ancho del teléfono */
+@media (max-width: 576px) {
+    #detalle-proyecto .img-fluid {
+        max-width: 100%;
+    }
+}
+
+/* Línea decorativa del encabezado */
+.linea-magenta-horizontal {
+    width:50px;
+    height: 4px;
+    background-color: var(--brand-magenta);
+    margin-top: 10px;
+}
+
+/* Estilo de los párrafos en la sección */
+#detalle-proyecto p.text-muted {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4a4a4a !important;
+}
+
+/* Etiquetas de herramientas */
+.badge-herramienta {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1.5px solid var(--brand-magenta);
+    border-radius: 50px;
+    color: #333;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: white;
+}
+
+/* Tarjetas de Métricas */
+.metric-box {
+    background-color: #ffffff;
+    border-left: 5px solid var(--brand-magenta);
+    border-radius: 10px;
+    padding: 40px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.metric-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
+}
+
+.metric-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--brand-magenta);
+    margin-bottom: 10px;
+}
+
+.metric-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    line-height: 1.4;
+    margin-bottom: 0 !important;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 767px) {
+    #detalle-proyecto .header-proyecto,
+    #detalle-proyecto .text-magenta-sub {
+        text-align: center;
+    }
+    
+    .linea-magenta-horizontal {
+        margin: 10px auto 0;
+    }
+    
+    .metric-number {
+        font-size: 2.8rem;
+    }
+}
+
+/* Adaptación para móviles */
+@media (max-width: 767px) {
+    #detalle-proyecto .header-proyecto,
+    #detalle-proyecto .text-magenta-sub {
+        text-align: center;
+    }
+    
+    .linea-magenta-horizontal {
+        margin: 10px auto 0;
+    }
+    
+    .metric-number {
+        font-size: 2.8rem;
+    }
+}
+
+.metric-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
+}
+
+.metric-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--brand-magenta);
+    margin-bottom: 10px;
+}
+
+.metric-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    line-height: 1.4;
+    margin-bottom: 0 !important;
+}
+
+/* Adaptación para móviles */
+@media (max-width: 767px) {
+    #detalle-proyecto .header-proyecto,
+    #detalle-proyecto .text-magenta-sub {
+        text-align: center;
+    }
+    
+    .linea-magenta-horizontal {
+        margin: 10px auto 0;
+    }
+    
+    .metric-number {
+        font-size: 2.8rem;
+    }
+}
+
+/* =========================================
+   FOOTER Y FORMULARIO DE CONTACTO
+========================================= */
+.contact-section {
+    background-color: var(--bg-dark-color);
+}
+
+/* Iconos Sociales */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--brand-magenta);
+    color: var(--bg-dark-color); /* El icono toma el color oscuro del fondo */
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.05);
+    color: var(--bg-dark-color);
+    background-color: #e600e6; /* Un magenta ligeramente más oscuro al pasar el mouse */
+}
+
+/* Campos del Formulario */
+.custom-input {
+    background-color: #d9d9d9; /* Tono gris claro exacto del diseño */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados sutiles */
+    padding: 0.8rem 1rem;
+    color: #333333;
+}
+
+.custom-input::placeholder {
+    color: #4a4a4a;
+}
+
+/* Estado activo del input para mantener la accesibilidad */
+.custom-input:focus {
+    background-color: #e5e5e5;
+    border: 2px solid var(--brand-magenta);
+    box-shadow: none;
+    outline: none;
+}
+
+/* Botón de Enviar (Magenta) */
+.btn-custom-magenta {
+    background-color: var(--brand-magenta);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom-magenta:hover {
+    background-color: #cc00cc;
+    color: #ffffff;
+}
+@media (min-width: 734px) {
+.texto_inicial {
+    font-size: 40px;
+    font-weight: lighter;
+    text-align: left;
+}
+.nombre {
+    font-size: 49px;
+    font-weight: bold;
+    text-align: left; 
+}
+.cargo {
+    font-size: 49px;
+    font-weight: bold;
+    text-align: left; 
+}
+}
